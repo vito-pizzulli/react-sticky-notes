@@ -1,9 +1,16 @@
-import React, { useState } from "react";
+import React from "react";
+import Header from "./Header";
+import CreateArea from "./CreateArea";
+import NotesArea from "./NotesArea";
 
 function App() {
   return (
     <div>
-      <h1>Sticky Notes</h1>
+      <Header />
+      <main>
+        <CreateArea />
+        <NotesArea />
+      </main>
     </div>
   );
 }
