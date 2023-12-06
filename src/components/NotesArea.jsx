@@ -2,7 +2,7 @@ import React from "react";
 
 function NotesArea() {
     return (
-        <div>
+        <div className="notes-area">
             <h2>Notes Area</h2>
         </div>
     );

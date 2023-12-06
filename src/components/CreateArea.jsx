@@ -2,7 +2,7 @@ import React from "react";
 
 function CreateArea() {
     return (
-        <div>
+        <div className="create-area">
             <h2>Create Area</h2>
         </div>
     );

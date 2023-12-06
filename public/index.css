@@ -1,0 +1,30 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Montserrat', sans-serif;
+}
+
+header {
+    background-color: #f5ba13;
+    color: white;
+    padding: 1rem;
+    height: 5vh;
+}
+
+main {
+    background-color: #fffefc;
+    background-image: url("https://www.transparenttextures.com/patterns/food.png");
+    padding: 1rem;
+}
+
+div.create-area {
+    height: 10vh;
+}
+
+div.notes-area {
+    height: 85vh;
+}
