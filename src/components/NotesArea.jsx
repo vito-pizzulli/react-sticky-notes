@@ -1,9 +1,20 @@
 import React from "react";
+import Note from "./Note";
 
-function NotesArea() {
+function NotesArea(props) {
     return (
         <div className="notes-area-container">
-            <h2>Notes Area</h2>
+            {props.notes.map((noteElement, index) => {
+                return (
+                    <Note
+                        key={index}
+                        id={index}
+                        title={noteElement.title}
+                        content={noteElement.content}
+                        onDelete={props.onDelete}
+                    />
+                );
+            })}
         </div>
     );
 }
