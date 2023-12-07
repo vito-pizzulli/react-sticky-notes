@@ -9,6 +9,10 @@ function CreateArea(props) {
         content: ""
     });
 
+    // Declaration of the error boolean using the state management hook.
+    // Keeps track of the visibility of the error field and is initialized as false.
+    const [errorVisible, setErrorVisible] = useState(false);
+
     // Function to handle changes in input fields and update the 'note' object using the state management hook.
     // Extracts the 'name' and 'value' from the event target, and utilizes the 'setNote' function to create a new object that includes the updated field along with the other one.
     function handleChange(event) {
@@ -24,12 +28,18 @@ function CreateArea(props) {
 
     // Function to submit a note, invoking the 'onAdd' prop function to add the current 'note' object to the parent component's state.
     // Resets the 'note' object with empty fields after submission and prevents the default form submission behavior.
+    // If one of the fields is empty, it sets the 'errorVisible' boolean to true, showing it. If the submission is successful, the 'errorVisible' is set to false.
     function submitNote(event) {
-        props.onAdd(note);
-        setNote({
-            title: "",
-            content: ""
-        });
+        if (note.title.trim() !== "" && note.content.trim() !== "") {
+            setErrorVisible(false);
+            props.onAdd(note);
+            setNote({
+                title: "",
+                content: ""
+            });
+        } else {
+            setErrorVisible(true);
+        }
         event.preventDefault()
     }
 
@@ -44,6 +54,7 @@ function CreateArea(props) {
 
     return (
         <div className="create-area-container">
+            {errorVisible && <h2 className="error-message">Please populate both fields.</h2>}
             <form className="create-area-form">
                 <div className="inputs">
                     <input
