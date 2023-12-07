@@ -1,9 +1,11 @@
 import React from "react";
 
 function Note(props) {
-function handleClick() {
-    props.onDelete(props.id);
-}
+
+    // Function to handle a click event and delete a note, invoking the 'onDelete' prop function from the parent component with the current 'id' as a parameter.
+    function handleClick() {
+        props.onDelete(props.id);
+    }
 
     return (
         <div className="note">
