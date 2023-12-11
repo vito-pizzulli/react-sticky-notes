@@ -63,17 +63,19 @@ function CreateArea(props) {
                         onChange={handleChange}
                         value={note.title}
                         placeholder="Title"
+                        maxLength={100}
                     />
                     <textarea
                         name="content"
                         onChange={handleChange}
                         value={note.content}
                         placeholder="Write your note..."
+                        maxLength={500}
                     />
                 </div>
                 <div className="buttons">
-                    <button onClick={submitNote}>Add</button>
-                    <button onClick={clearFields}>Clear fields</button>
+                    <button onClick={submitNote}><i class="fa-solid fa-plus"></i></button>
+                    <button onClick={clearFields}><i class="fa-solid fa-eraser"></i></button>
                 </div>
             </form>
         </div>

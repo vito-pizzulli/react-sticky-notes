@@ -9,9 +9,11 @@ function Note(props) {
 
     return (
         <div className="note">
-            <h3>{props.title}</h3>
-            <p>{props.content}</p>
-            <button onClick={handleClick}>Delete</button>
+            <div className="infos">
+                <h3>{props.title}</h3>
+                <p>{props.content}</p>
+            </div>
+            <button onClick={handleClick}><i class="fa-solid fa-trash-can"></i></button>
         </div>
     );
 }

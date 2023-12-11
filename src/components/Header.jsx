@@ -3,7 +3,7 @@ import React from "react";
 function Header() {
     return (
         <header>
-                <h1>Sticky Notes</h1>
+            <h1><i class="fa-solid fa-note-sticky"></i> Sticky Notes</h1>
         </header>
     );
 }
