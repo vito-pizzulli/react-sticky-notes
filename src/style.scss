@@ -37,9 +37,10 @@ form.create-area-form {
     padding: 1rem;
     box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 4px, rgba(0, 0, 0, 0.3) 0px 7px 13px -3px, rgba(0, 0, 0, 0.2) 0px -3px 0px inset;
     width: 45%;
-    height: 180px;
+    height: 100%;
     display: flex;
     justify-content: space-between;
+    align-items: center;
 
     div.inputs,
     div.buttons {
@@ -50,6 +51,7 @@ form.create-area-form {
         flex-direction: column;
         justify-content: space-between;
         width: 100%;
+        height: 100%;
 
         input,
         textarea {
@@ -57,6 +59,7 @@ form.create-area-form {
             border: none;
             font-family: 'Montserrat', sans-serif;
             font-size: 1rem;
+            background-color: transparent;
 
             &:focus {
                 outline: none;
@@ -64,7 +67,8 @@ form.create-area-form {
         }
 
         input {
-            height: 20%;
+            font-weight: bold;
+            margin-bottom: .5rem;
         }
 
         textarea {
@@ -93,7 +97,7 @@ div.note {
     justify-content: space-between;
     width: fit-content;
     max-width: calc(100% / 4 - 2rem);
-    height: 250px;
+    height: 300px;
     background-color: white;
     box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 4px, rgba(0, 0, 0, 0.3) 0px 7px 13px -3px, rgba(0, 0, 0, 0.2) 0px -3px 0px inset;
     position: relative;
@@ -120,6 +124,9 @@ div.note {
         font-size: 1.5rem;
         bottom: 0;
         right: 0;
+        background-color: white;
+        padding: .3rem;
+        border-radius: 50%;
     }
 }
 
@@ -134,5 +141,40 @@ button {
 
     &:hover {
         transform: scale(1.2);
+    }
+}
+
+@media screen and (max-width: 1199px) {
+    div.note {
+        max-width: calc(100% / 3 - 2rem);
+    }
+    
+    form.create-area-form {
+        width: 55%;
+    }
+}
+
+@media screen and (max-width: 991px) {
+    form.create-area-form div.buttons button {
+        font-size: 2rem;
+        margin: .4rem;
+    }
+
+    div.note {
+        max-width: calc(100% / 2 - 2rem);
+    }
+
+    form.create-area-form {
+        width: 65%;
+    }
+}
+
+@media screen and (max-width: 767px) {
+    div.note {
+        max-width: calc(100% - 2rem);
+    }
+
+    form.create-area-form {
+        width: 100%;
     }
 }
