@@ -25,9 +25,18 @@ main {
 div.create-area-container {
     height: 15vh;
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
     padding: 1rem;
+    position: relative;
+
+    h2.error-message {
+        position: absolute;
+        top: 20px;
+        color: red;
+        font-size: 1.2rem;
+    }
 }
 
 form.create-area-form {
@@ -78,7 +87,7 @@ form.create-area-form {
     }
 
     div.buttons button {
-    font-size: 2.5rem;
+        font-size: 2.5rem;
     }
 }
 
